@@ -1,0 +1,157 @@
+{
+    "strategyGenera": "options",
+    "strategyName": "Test.Strategy2",
+    "index": "NIFTY",
+    "description": "",
+    "strategyType": "Intraday",
+    "entryTime": "00:15",
+    "exitTime": "15:30",
+    "restrictReEntry": {
+      "enabled": true,
+      "time": "09:55"
+    },
+    "legWiseSetting": {
+      "trailSlToBreakeven": false,
+      "legSlSquareOffAllLegs": false
+    },
+    "legs": [
+      {
+        "id": "id-1733809354486-728",
+        "isEnabled": true,
+        "lots": 1,
+        "segment": "Options",
+        "Position": "Buy",
+        "optionType": "CE",
+        "Expiry": "Weekly",
+        "StrikeCriteria": "CLOSEST Premium",
+        "StrikeType": 10,
+        "targetProfit": {
+          "enabled": true,
+          "value": 3,
+          "unit": "Percent(%)"
+        },
+        "stopLoss": {
+          "enabled": true,
+          "value": 5,
+          "unit": "Percent(%)"
+        },
+        "trailStopLoss": {
+          "enabled": true,
+          "movementBy": 0.05,
+          "trailSlBy": 0.05,
+          "unit": "Pts"
+        },
+        "reEntryOntarget": {
+          "enabled": true,
+          "value": 2,
+          "unit": "Immediate Re-entry"
+        },
+        "reEntryOnSL": {
+          "enabled": false,
+          "value": 1,
+          "unit": "Immediate Re-entry"
+        },
+        "simpleMomentum": {
+          "enabled": false,
+          "value": 0,
+          "unit": "Pts ↑"
+        },
+        "rangeBreakOut": {
+          "enabled": false,
+          "method": "Instrument",
+          "entryOn": "High",
+          "entryTime": "09:45",
+          "exitTime": "09:45"
+        }
+      },
+      {
+        "id": "id-1733989361204-314",
+        "isEnabled": true,
+        "lots": 1,
+        "segment": "Options",
+        "Position": "Buy",
+        "optionType": "PE",
+        "Expiry": "Weekly",
+        "StrikeCriteria": "CLOSEST Premium",
+        "StrikeType": 10,
+        "targetProfit": {
+          "enabled": false,
+          "value": 5,
+          "unit": "Pts"
+        },
+        "stopLoss": {
+          "enabled": false,
+          "value": 2,
+          "unit": "Pts"
+        },
+        "trailStopLoss": {
+          "enabled": false,
+          "movementBy": 0.1,
+          "trailSlBy": 0.05,
+          "unit": "Pts"
+        },
+        "reEntryOntarget": {
+          "enabled": true,
+          "value": 2,
+          "unit": "Immediate Re-entry"
+        },
+        "reEntryOnSL": {
+          "enabled": true,
+          "value": 3,
+          "unit": "Immediate Re-entry"
+        },
+        "simpleMomentum": {
+          "enabled": false,
+          "value": 0,
+          "unit": "Pts ↑"
+        },
+        "rangeBreakOut": {
+          "enabled": false,
+          "method": "Instrument",
+          "entryOn": "High",
+          "entryTime": "09:45",
+          "exitTime": "09:45"
+        }
+      }
+    ],
+    "lockProfile": {
+      "strategyMaxProfit": 0,
+      "strategyMaxLoss": 0,
+      "overallReEntry": {
+        "overallReEntryOnSL": {
+          "enabled": false,
+          "value": 1,
+          "unit": "RE ASAP"
+        },
+        "overallReEntryOnTarget": {
+          "enabled": false,
+          "value": 1,
+          "unit": "RE ASAP"
+        }
+      }
+    },
+    "mtMSettings": {
+      "enabled": true,
+      "lockProfit": {
+        "enabled": false,
+        "profitAchieved": 10,
+        "lockProfit": 5
+      },
+      "trailMTMLoss": {
+        "enabled": false,
+        "profitIncreasedBy": 0.5,
+        "trailMTMSLBy": 0.5
+      },
+      "lockProfitAndTrail": {
+        "enabled": true,
+        "profitAchieved": 20,
+        "lockProfit": 10,
+        "profitIncreasedBy": 1,
+        "trailLockedProfitBy": 0.5
+      }
+    },
+    "backTestDates": {
+      "startDate": "2024-12-10",
+      "endDate": "2024-12-10"
+    }
+  }
