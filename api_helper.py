@@ -1,10 +1,7 @@
 from NorenRestApiPy.NorenApi import  NorenApi
-from threading import Timer
-import pandas as pd
 import time
 import concurrent.futures
 
-api = None
 class Order:
      def __init__(self, buy_or_sell:str = None, product_type:str = None,
                  exchange: str = None, tradingsymbol:str =None, 
@@ -28,18 +25,14 @@ class Order:
 
 def get_time(time_string):
     data = time.strptime(time_string,'%d-%m-%Y %H:%M:%S')
-
     return time.mktime(data)
 
 
 class ShoonyaApiPy(NorenApi):
-    def __init__(self):
-        NorenApi.__init__(self, host='https://api.shoonya.com/NorenWClientTP/', websocket='wss://api.shoonya.com/NorenWSTP/')        
-        global api
-        api = self
+    def __init__(self):  
+        super().__init__(host='https://api.shoonya.com/NorenWClientTP/', websocket='wss://api.shoonya.com/NorenWSTP/')
 
     def place_basket(self, orders):
-
         resp_err = 0
         resp_ok  = 0
         result   = []
@@ -59,10 +52,10 @@ class ShoonyaApiPy(NorenApi):
         return result
                 
     def placeOrder(self,order: Order):
-        ret = NorenApi.place_order(self, buy_or_sell=order.buy_or_sell, product_type=order.product_type,
+        return NorenApi.place_order(self, buy_or_sell=order.buy_or_sell, product_type=order.product_type,
                             exchange=order.exchange, tradingsymbol=order.tradingsymbol, 
                             quantity=order.quantity, discloseqty=order.discloseqty, price_type=order.price_type, 
                             price=order.price, trigger_price=order.trigger_price,
                             retention=order.retention, remarks=order.remarks)
 
-        return ret
+        
