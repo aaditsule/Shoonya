@@ -12,3 +12,4 @@ config.json
 ltp_data.json
 NSE_Symbols.csv
 Nifty_symbols.csv
+fetch_historical_data.py

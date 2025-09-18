@@ -5,6 +5,7 @@ import time
 from datetime import datetime, timedelta
 import pyotp
 from loguru import logger
+from broker import Shoonya
 
 # ---- Logging Setup ----
 logger.add("fetch_data.log", rotation="1 MB", retention="7 days", level="DEBUG")
